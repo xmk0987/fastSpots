@@ -22,14 +22,6 @@ const Navbar = (props) => {
         }
     };
 
-    const buttonStyle = {
-        border: 'none',
-        background: 'none',
-        cursor: 'pointer',
-        textDecoration: 'underline', // Add an underline to mimic link style
-        color: 'blue', // Adjust the color to match your link style
-    };
-
     return (
         <header>
             <nav className="navbar">
@@ -37,11 +29,7 @@ const Navbar = (props) => {
                     <ul>
                         <li><Link to='/top-lists'>TOP LISTS</Link></li>
                         <li><Link to='/playlist'>PLAYLIST</Link></li>
-                        <li>
-                            <button style={buttonStyle} onClick={handleLogout}>
-                                LOGOUT
-                            </button>
-                        </li>
+                        <li><Link to='#' onClick={() => handleLogout}>LOGOUT</Link></li>
                     </ul>
                 </div>
             </nav>
