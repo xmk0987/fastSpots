@@ -83,7 +83,6 @@ router.get("/api/account", async (req,res) => {
             if(result === false){
                 console.log("Error saving tokens");
             }
-            const cookie = req.cookies['fast-spots-cookie'];
 
             res.redirect(`${process.env.CLIENT_URL}/top-lists`);
         } else{
