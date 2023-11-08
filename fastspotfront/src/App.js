@@ -26,16 +26,8 @@ function App() {
     useEffect(() => {
       const checkAccessToken = async () => {
          try {
-          let headers = new Headers();
-
-          headers.append('Content-Type', 'application/json');
-          headers.append('Accept', 'application/json');
-          headers.append('Origin','http://fastspots.net');
            const response = await fetch(`${BASE_FETCH_URL}/check-access-token`, {
-              mode: 'cors',
-              credentials: 'include',
-              method: 'GET',
-              headers: headers
+             credentials: 'include',
            });
            const data = await response.json();
            const isAccessTokenPresent = data.isAccessTokenPresent;
