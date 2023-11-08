@@ -42,6 +42,8 @@ const client = new Redis(process.env.REDIS_URL);
 
 const RedisStore = connectRedis(session);
 
+app.set("trust proxy", 1);
+
 app.use(
     session({
       store: new RedisStore({ client: client }),
@@ -53,7 +55,7 @@ app.use(
         secure: true, //change false on localhost
         httpOnly: true,
         maxAge: 1000 * 55 * 60,
-        sameSite: 'Lax'
+        sameSite: 'none'
       },
     })
 );
