@@ -26,7 +26,7 @@ function App() {
     useEffect(() => {
       const checkAccessToken = async () => {
          try {
-           const response = await fetch(`${BASE_FETCH_URL}/check-access-token`, {
+           const response = await fetch(`api/check-access-token`, {
              credentials: 'include',
            });
            const data = await response.json();

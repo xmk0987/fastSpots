@@ -1,7 +1,7 @@
 // Fetching user, calling server where api calls are done
-export const fetchUser = async (baseURL) => {
+export const fetchUser = async () => {
     try {
-        const userApiData = await fetch(`${baseURL}/fetchUser` ,{
+        const userApiData = await fetch(`api/fetchUser` ,{
             credentials: 'include',
         });
         if (!userApiData.ok) {
@@ -16,9 +16,9 @@ export const fetchUser = async (baseURL) => {
 };
 
 // Fetching liked songs, calling server where api calls are done
-export const fetchLiked = async (baseURL) => {
+export const fetchLiked = async () => {
     try{
-        const likedTracksApiData = await fetch(`${baseURL}/fetchLiked/50` ,{
+        const likedTracksApiData = await fetch(`api/fetchLiked/50` ,{
             credentials: 'include',
         });
         if (!likedTracksApiData.ok) {
@@ -33,9 +33,9 @@ export const fetchLiked = async (baseURL) => {
 };
 
 // Fetching playlists, calling server where api calls are done
-export const fetchPlaylists = async (baseURL) => {
+export const fetchPlaylists = async () => {
     try {
-        const playlistApiData = await fetch(`${baseURL}/fetchPlaylists`, {
+        const playlistApiData = await fetch(`api/fetchPlaylists`, {
             credentials: 'include'
         });
         if (!playlistApiData.ok) {
@@ -50,9 +50,9 @@ export const fetchPlaylists = async (baseURL) => {
 };
 
 // Fetching playlists tracks, calling server where api calls are done
-export const fetchPlaylistTracks = async (playlistId, baseURL, newTracksAdded=false) => {
+export const fetchPlaylistTracks = async (playlistId, newTracksAdded=false) => {
     try{
-        const playlistTrackApiData = await fetch(`${baseURL}/fetchPlaylistTracks/${playlistId}/${newTracksAdded}`,{
+        const playlistTrackApiData = await fetch(`api/fetchPlaylistTracks/${playlistId}/${newTracksAdded}`,{
             credentials: 'include'
         });
         if(!playlistTrackApiData.ok){

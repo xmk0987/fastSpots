@@ -18,11 +18,11 @@ const fetchWithCredentials = async (url) => {
 };
 
 // Create a function to fetch top artists
-export const fetchTopArtists = async (baseUrl, maxArtists) => {
-  return fetchWithCredentials(`${baseUrl}/top-artists/${maxArtists}`);
+export const fetchTopArtists = async ( maxArtists) => {
+  return fetchWithCredentials(`api/top-artists/${maxArtists}`);
 };
 
 // Create a function to fetch top tracks
-export const fetchTopTracks = async (baseUrl, maxSongs) => {
-  return fetchWithCredentials(`${baseUrl}/top-tracks/${maxSongs}`);
+export const fetchTopTracks = async ( maxSongs) => {
+  return fetchWithCredentials(`api/top-tracks/${maxSongs}`);
 };

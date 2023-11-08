@@ -1,9 +1,8 @@
 import React from 'react';
 
 const Login = (props) => {
-    const { baseURL } = props;
     const handleLoginClick = () => {
-        const newUrl = `${baseURL}/authorization`;
+        const newUrl = `api/authorization`;
         console.log("login pitäisi tapahtua");
         console.log(newUrl);
         
