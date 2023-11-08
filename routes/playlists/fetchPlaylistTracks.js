@@ -16,6 +16,8 @@ router.get(`/api/fetchPlaylistTracks/:playlist_id/:newTracksAdded`, async (req, 
   try {
 
     const playlist = await fetchPlaylistTracksFromSpotify(playlistId, access_token);
+    console.log("FETCH PLAYLIST TRACKS");
+    console.log(playlist);
     res.json(playlist);
 
   } catch (error) {
@@ -51,6 +53,7 @@ async function fetchPlaylistTracksFromSpotify(playlistId, accessToken) {
     next = data.next;
   }
 
+  console.log("ALL TRACKS " + allTracks);
   return allTracks;
 }
 
