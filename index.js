@@ -50,7 +50,7 @@ app.use(
       resave: false,
       saveUninitialized: false,
       cookie: {
-        secure: true, //change false on localhost
+        secure: false, //change false on localhost
         httpOnly: true,
         maxAge: 1000 * 55 * 60,
       },
