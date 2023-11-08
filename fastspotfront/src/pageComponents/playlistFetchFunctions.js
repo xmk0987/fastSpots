@@ -54,9 +54,10 @@ export const fetchPlaylists = async () => {
 };
 
 // Fetching playlists tracks, calling server where api calls are done
-export const fetchPlaylistTracks = async (playlistId, newTracksAdded=false) => {
+export const fetchPlaylistTracks = async (playlistId) => {
+    console.log(playlistId);
     try{
-        const playlistTrackApiData = await fetch(`api/fetchPlaylistTracks/${playlistId}/${newTracksAdded}`,{
+        const playlistTrackApiData = await fetch(`api/fetchPlaylistTracks/${playlistId}`,{
             credentials: 'include'
         });
         if(playlistTrackApiData.ok){

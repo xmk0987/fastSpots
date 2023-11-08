@@ -5,7 +5,7 @@ const { getFromSession } = require('../../helperFunction');
 const router = express.Router();
 
 
-router.get(`/api/fetchPlaylistTracks/:playlist_id/:newTracksAdded`, async (req, res) => {
+router.get(`/api/fetchPlaylistTracks/:playlist_id`, async (req, res) => {
   const access_token = await getFromSession(req, "access_token");
 
   if (!access_token) {

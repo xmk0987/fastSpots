@@ -141,7 +141,7 @@ const Playlist = (props) => {
     useEffect(() => {
         if (editorPlaylistId && playlistsUpdated) {
             const fetchNewPlaylist = async () => {
-                const newTracks = await fetchPlaylistTracks(editorPlaylistId, baseURL);
+                const newTracks = await fetchPlaylistTracks(editorPlaylistId);
                 setEditorPlaylistTracks(newTracks);
                 setFilteredEditor(newTracks);
                 if(currentTitle === editorTitle){
