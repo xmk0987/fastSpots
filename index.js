@@ -36,6 +36,8 @@ app.use(express.static(path.join(__dirname, 'fastspotfront','build')));
 // ADDED
 app.use(cookieParser());
 
+app.enable('trust proxy')
+
 const client = new Redis(process.env.REDIS_URL);
 
 // HERE IS EXTRA CODE ADDED TRYING SESSION
@@ -53,6 +55,7 @@ app.use(
         secure: true, //change false on localhost
         httpOnly: true,
         maxAge: 1000 * 55 * 60,
+        sameSite: 'none'
       },
     })
 );
