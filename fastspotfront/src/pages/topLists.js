@@ -19,8 +19,8 @@ const TopLists = (props) => {
     
     const setTopLists = async () => {
         try{
-            const tracks = await fetchTopTracks(baseURL, maxSongs);
-            const artists = await fetchTopArtists(baseURL, maxArtists);
+            const tracks = await fetchTopTracks(maxSongs);
+            const artists = await fetchTopArtists(maxArtists);
             if(tracks.items.length > 0 && artists.items.length >0){
                 setTopTracks(tracks);
                 setTopArtists(artists);

@@ -60,9 +60,20 @@ app.use(
     })
 );
 
-app.use(cors({ origin: '*',
-  credentials: true, }));
+const allowedOrigins = ['https://fastspots.net', 'https://www.fastspots.net'];
 
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 // AUTHORIZATION AND FETCHING ACCESS TOKENS
 //app.use(authorizationRouter);
