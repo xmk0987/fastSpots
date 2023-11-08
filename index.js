@@ -60,7 +60,7 @@ app.use(
     })
 );
 
-app.use(cors({ origin: process.env.ORIGIN,
+app.use(cors({ origin: '*',
   credentials: true, }));
 
 
