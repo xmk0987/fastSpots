@@ -96,7 +96,9 @@ router.get("/api/account", async (req,res) => {
 
 // CHECKING FOR ACCESS TOKEN IN SESSION
 router.get("/api/check-access-token", async (req, res) => {
+
     console.log("checking access");
+    console.log(req.sessionID);
     const access_token = await getFromSession(req, 'access_token');
     if(access_token){
         res.json({ isAccessTokenPresent : true});

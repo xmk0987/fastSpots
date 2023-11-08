@@ -1,6 +1,7 @@
 
 const setToSession = async (req, object) => {
     console.log("SET SET SET SET");
+    console.log(req.sessionID);
     try {
       req.session.myData = object;
       return true;
@@ -13,6 +14,7 @@ const setToSession = async (req, object) => {
   // Get data from the session
   const getFromSession = async (req, wantedData) => {
     console.log("GET GET GET GET");
+    console.log(req.sessionID);
     try {
       if(req.session.myData){
         const data = await req.session.myData; 
@@ -20,6 +22,7 @@ const setToSession = async (req, object) => {
             return null;
           }
           const wanted = data[wantedData];
+          console.log("wanted " +wanted);
           return wanted;
       }else{
         return null;
