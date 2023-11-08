@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Login = (props) => {
+const Login = () => {
     const handleLoginClick = () => {
         const newUrl = `api/authorization`;
         console.log("login pitäisi tapahtua");

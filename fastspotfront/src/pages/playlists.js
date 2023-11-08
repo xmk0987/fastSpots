@@ -205,7 +205,7 @@ const handleCreateNewPlaylist = async (event) => {
         const playlistDescription = formDataObject["newDesc"];
         const publicState = formDataObject["publicState"];
 
-        const url = `/createPlaylist/${user.id}/${playlistName}/${playlistDescription}/${publicState}`;
+        const url = `api/createPlaylist/${user.id}/${playlistName}/${playlistDescription}/${publicState}`;
         
         const response = await fetch(url, {
             credentials: 'include',
@@ -252,7 +252,7 @@ const addChosen = async (id) => {
             uris: uriList,
             position: 0,
         });
-        const url = `/addTracks/${id}`;
+        const url = `api/addTracks/${id}`;
     
         try {
             const response = await fetch(url, {
@@ -308,7 +308,7 @@ const deleteChecked = async () => {
             tracks: uriList,
         });
 
-        const url = `/deleteTracks/${editorPlaylistId}`;
+        const url = `api/deleteTracks/${editorPlaylistId}`;
         try{
             const response = await fetch(url, {
                 method: 'DELETE',
@@ -350,7 +350,7 @@ const unfollowPlaylist = async () => {
         alert("Can't unfollow nothing");
     } else{
         try{
-            const url = `/unfollowPlaylist/${editorPlaylistId}`;
+            const url = `api/unfollowPlaylist/${editorPlaylistId}`;
             const response = await fetch(url, {
                 method: 'DELETE',
                 headers: {
