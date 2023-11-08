@@ -31,7 +31,6 @@ router.get('/api/authorization', async (req, res) => {
 });
 
 router.get("/api/account", async (req,res) => {
-    console.log("in account: ");
     // COMING BACK FROM SPOTIFY PAGE TO FIND OUT MY SESSION ID HAS CHANGED
     try{
         const spotifyResponse = await axios.post(
@@ -50,7 +49,6 @@ router.get("/api/account", async (req,res) => {
             }
         );
         if(spotifyResponse.status === 200){
-            console.log("session before access");
             access_token = spotifyResponse.data.access_token;
             refresh_token = spotifyResponse.data.refresh_token;
            

@@ -28,12 +28,8 @@ dotenv.config();
 
 const app = express();
 
-console.log(path.join(__dirname, 'fastspotfront','build'));
-
 app.use(express.static(path.join(__dirname, 'fastspotfront','build')));
 
-  
-// ADDED
 app.use(cookieParser());
 
 const client = new Redis(process.env.REDIS_URL);

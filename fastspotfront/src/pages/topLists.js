@@ -14,9 +14,7 @@ const TopLists = (props) => {
   const baseURL = props.baseURL;
 
   // FETCHING TOP ARTISTS AND TRACKS AND POPULATING STATE
-  useEffect(() => {
-    console.log("Päästään tänne top listoihin");
-    
+  useEffect(() => {    
     const setTopLists = async () => {
         try{
             const tracks = await fetchTopTracks(maxSongs);

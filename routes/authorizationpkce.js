@@ -17,9 +17,6 @@ router.get('/api/authorization', async (req, res) => {
     if(result === false){
         console.log("Error saving verifier");
     }
-    console.log("verifier saved" + req.session.myData.verifier);    
-    console.log(req.sessionID);
-
 
     const scope = [
         "user-read-email",
@@ -51,8 +48,6 @@ router.get("/api/account", async (req,res) => {
 
     try{
         const verifier = await getFromSession(req, "verifier");
-        console.log("in account " + verifier);
-        console.log(req.sessionID);
 
         const spotifyResponse = await axios.post(
             "https://accounts.spotify.com/api/token",
@@ -96,9 +91,6 @@ router.get("/api/account", async (req,res) => {
 
 // CHECKING FOR ACCESS TOKEN IN SESSION
 router.get("/api/check-access-token", async (req, res) => {
-
-    console.log("checking access");
-    console.log(req.sessionID);
     const access_token = await getFromSession(req, 'access_token');
     if(access_token){
         res.json({ isAccessTokenPresent : true});

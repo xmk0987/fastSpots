@@ -23,7 +23,6 @@ export const fetchLiked = async () => {
         });
         if (likedTracksApiData.ok) {
             const data = await likedTracksApiData.json();
-            console.log(data);
             return data;
         } else {
             throw new Error(`Error fetching data`);
@@ -42,7 +41,6 @@ export const fetchPlaylists = async () => {
         });
         if (playlistApiData.ok) {
             const playlistData = await playlistApiData.json();
-            console.log(playlistData);
             return playlistData;
         }
         throw new Error(`Error fetching playlists! Status: ${playlistApiData.status}`);
@@ -62,7 +60,6 @@ export const fetchPlaylistTracks = async (playlistId) => {
         });
         if(playlistTrackApiData.ok){
             const playlistTrackData = await playlistTrackApiData.json();
-            console.log(playlistTrackApiData);
             return playlistTrackData;       
         }
         throw new Error(`Error fetching playlist tracks! Status: ${playlistTrackApiData.status}`);
