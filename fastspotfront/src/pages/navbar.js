@@ -29,7 +29,7 @@ const Navbar = (props) => {
                     <ul>
                         <li><Link to='/top-lists'>TOP LISTS</Link></li>
                         <li><Link to='/playlist'>PLAYLIST</Link></li>
-                        <li><Link to='#' onClick={() => handleLogout}>LOGOUT</Link></li>
+                        <li><Link to='#' onClick={handleLogout}>LOGOUT</Link></li>
                     </ul>
                 </div>
             </nav>
