@@ -1,0 +1,60 @@
+/* LOGIN.JS CSS */
+.login-container{
+    margin-top: 180px;
+    height: 50%;
+    min-width: 500px;
+    min-height: 400px;
+    display:flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    border-radius: 4%;
+    box-shadow:0px 10px 0px 0px #1DB954;
+}
+
+
+.login-title{
+    font-size: 2rem;
+    margin-bottom: .7rem;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.login-subtitle{
+    margin-top: 1rem;
+
+}
+
+.subtitle{
+    font-size: 1rem;
+}
+
+.spotify{
+    color: #1DB954;
+}
+
+.login-authorize{
+    text-align: center;
+    margin: 2rem auto 0 auto;
+    width: 30%;
+    height: 50px;
+    background-color: var(--spotifyGreen);
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 7px 3px -2px gray;
+
+}
+
+.login-authorize:hover{
+    box-shadow: none;
+    background-color: var(--spotifyGreen);
+    box-shadow: 0 7px 3px -2px var(--spotifyGreen);
+    cursor: pointer;
+}
+
+.login-authorize:active{
+    box-shadow: none;
+}
+  
+  
+  

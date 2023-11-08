@@ -28,9 +28,9 @@ dotenv.config();
 
 const app = express();
 
-console.log(path.join(__dirname, 'fastSpotClient','build'));
+console.log(path.join(__dirname, 'fastspotfront','build'));
 
-app.use(express.static(path.join(__dirname, 'fastSpotClient','build')));
+app.use(express.static(path.join(__dirname, 'fastspotfront','build')));
 
   
 // ADDED
@@ -77,7 +77,7 @@ app.use(unfollowPlaylistRouter);
 app.use(logoutRouter);
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, 'fastSpotClient', 'build', 'index.html'));
+  res.sendFile(path.join(__dirname, 'fastspotfront', 'build', 'index.html'));
 });
 
 app.listen(process.env.PORT, () => console.log(`server is running on port ${process.env.PORT}`));

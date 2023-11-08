@@ -1,0 +1,60 @@
+
+@media only screen and (max-width: 900px){
+    .playlist-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: 900px 60px 900px 50px;
+      grid-template-areas:
+        "editor editor"
+        "pList cList"
+        "pList cList"
+        "pList cList"
+  
+    }
+  
+    .editorContainer{
+      margin-top: 1rem;
+    }
+  
+    .editorButtonsContainer{
+      margin-bottom: 1rem;
+    }
+  
+  }
+  
+  
+@media only screen and (max-width: 615px){
+    .playlist-grid{
+        font-size: 0.7rem;
+    }
+
+    .optionButton{
+        font-size: 0.7rem;
+    }
+
+    .playlistButton{
+        font-size: 0.7rem;
+    }
+
+    .top-container{
+        margin-top: 0rem;
+        min-width: 100%;
+        max-height: 500px;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .newPlaylistInfo, .addChosenPopupContainer, .login-container{
+    width: 100%;
+    }
+
+
+}
+
+
+@media only screen and (max-width: 450px){
+    .top-list-container{
+    margin: 5rem 0;
+    }
+
+}

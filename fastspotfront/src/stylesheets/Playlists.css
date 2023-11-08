@@ -1,0 +1,405 @@
+
+
+/* PLAYLIST CONTAINER */
+.playlist-container{
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    padding-top: 50px;
+    background-color: black;
+  }
+  
+  .playlist-grid {
+    height: 100%;
+    width: 100%;
+    display:grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-rows: 60px 3fr 50px;
+    grid-template-areas: 
+    "pList cList editor"
+    "pList cList editor"
+    "pList cList editor";
+  }
+  
+  
+  
+  .playlist-list {
+    grid-area: pList;
+    height: 100%;
+    width: 100%;
+    display:grid;
+    grid-template-rows: 50px 1fr 60px;
+    grid-template-areas: "playlistHeader" 
+                          "playlistMain" 
+                          "playlistMain";
+  }
+  
+  .playlist-list li{
+    width: 100%;
+  
+  
+  }
+  
+  .playlistHeaderContainer{
+    grid-area: playlistHeader;
+  }
+  
+  .playlist-list-container{
+    grid-area: playlistMain;
+    list-style:none;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    background-color: black;
+  }
+  
+  .playlistButton {
+    width:100%;
+    height:100%;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border: none;
+    color: var(--background-color);
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    font-weight: bold;
+    background-color: black;
+  }
+  
+  .playlistImage, .ion-icon{
+    width: 50px;
+    height: 50px;
+  }
+  
+  .current-list-container{
+    grid-area: cList;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 80px 1fr 60px;
+    grid-template-areas: "cListHeader" 
+                          "cListMain" 
+                          "cListOption";
+  }
+  
+  .currentPlaylistHeaderContainer{
+    grid-area: cListHeader;
+  }
+  
+  .ion-icon{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size:2rem;
+  }
+  
+  .playlistButton:hover, .current-list ul li:hover, .editorList li:hover{
+    background-color: rgb(62, 59, 59);
+    cursor: pointer;
+  }
+  
+  #currentHeader{
+    background-color: black;
+  }
+  
+  
+  
+  .current-list{
+    grid-area: cListMain;
+    position: relative;
+    width: 100%;
+    background-color: rgb(19, 19, 19);
+    overflow: scroll;
+    scroll-behavior: smooth;
+  }
+  
+  .searchBar{
+    width: 100%;
+    height: 30px;
+    position: sticky;
+    top:50px;
+  }
+  
+  .current-list ul{
+    list-style: none;
+  }
+  
+  .current-list ul li{
+    margin: 0.5rem;
+  }
+  
+  .checkbox{
+    margin-right: 1rem;
+  }
+  
+  .search{
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding-left: 0.5rem;
+  }
+  
+  .currentSearch{
+    color: white;
+    
+  }
+  
+  .editorSearch{
+    color:black;
+  }
+  
+  
+  
+  .currentSearch{
+    background-color: var(--grey);
+  }
+  
+  
+  
+  /* PLAYLIST OPTION BUTTONS*/
+  .playlistOptions{
+    grid-area: cListOption;
+    background-color: black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+  }
+  
+  .optionButton{
+    height: 60%;
+    padding: 0 0.3rem;
+    text-align: center;
+    font-weight: 600;
+    border:none;
+  }
+  
+  .optionButton:hover{
+    cursor: pointer;
+    box-shadow:none;
+  }
+  
+  .currentOptionButton{
+    background-color: var(--background-color);
+    color: black;
+    box-shadow: 3px 3px 3px rgba(132, 18, 18, 0.975);
+  }
+  
+  .editorOptionButton{
+    background-color: black;
+    color: var(--secondary-color);
+    box-shadow: 3px 3px 3px rgb(22, 21, 21);
+  }
+  
+  
+  
+  /* NEW PLAYLIST CREATION */
+  .newPlaylistInfo, .addChosenPopupContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:var(--background-color);
+    width: 500px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 4%;
+    z-index: 5;
+    color:black;
+    opacity: 1;
+  }
+  
+  
+  .closeButton {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 5px;
+    right: 10px;
+    border-radius: 30%;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+
+  }
+  
+  .nameInput{
+    width: 300px;
+    background-color: black;
+    color:white;
+  }
+  
+  .newTextarea{
+    width: 300px;
+    background-color: black;
+    color:white;
+  
+  }
+  
+  .newPlaylistItem{
+    margin: 1rem 0;
+  }
+  
+  .radioItems{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .submitButton{
+    display:flex;
+    justify-content: center;
+    margin-right: 2rem
+  }
+  
+  .newPlaylistSubmit{
+    width: 100px;
+    padding: 0.3rem;
+    margin-left: 2rem;
+    font-size:1.3rem;
+    font-weight: bold;
+  }
+  
+  
+  
+  
+  /* ADD CHOSEN BUTTON CSS */
+  .addChosenPopupContainer{
+    scroll-behavior: smooth;
+    color: black;
+  }
+  
+  .addChosenPopupContainer h2{
+    margin-top:0.5rem;
+  }
+  
+  .addChosenList {
+    list-style: none;
+    margin-right: 1rem;
+    overflow: scroll;
+  }
+  
+  .editorContainer{
+    grid-area: editor;
+    color: var(--secondary-color);
+    display:flex;
+    flex-direction: column;
+  }
+  
+  
+  .headerContainer{
+    background-color: var(--background-color);
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .headerContainer h2 {
+    margin-left: 0.3rem;
+  }
+  
+  .left, .right{
+    background-color: black;
+  }
+  
+  
+  .editorContainer{
+    display: grid;
+    grid-template-rows: 80px 1fr 60px;
+    grid-template-areas: "editorHeader" 
+                          "editorMain" 
+                          "editorOptions";
+  }
+  
+  .editorHeaderContainer{
+    grid-area: editorHeader;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .editorListContainer{
+    grid-area: editorMain;
+    overflow: scroll;
+    scroll-behavior: smooth;
+  }
+  
+  .editorButtonsContainer{
+    background-color: var(--background-color);
+    grid-area: editorOptions;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .editorList li {
+    margin: 0.5rem;
+  }
+  
+  .editorGuideContainer{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    gap: 2rem;
+    color: rgb(201, 201, 201);
+    width: 80%;
+  }
+  .guideMainHeader{
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    color: var(--background-color)
+  }
+  
+  .guideSubHeader{
+    margin-bottom: 1rem;
+    font-size: 1.7rem;
+    color: var(--background-color)
+  }
+  
+  h5{
+    margin: 1rem 0;
+    font-size: 1.2rem;
+  }
+  
+  .editorGuideContainer p{
+    margin: 0.7rem 0;
+  }
+  
+  .bold{
+    font-weight: 700;
+  }
+  
+  .progressBarContainer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #myProgress {
+    width: 60%;
+    background-color: rgb(255, 255, 255);
+    display: flex; 
+    align-items: center;
+  }
+  
+  #myProgress p{
+    position: absolute;
+    margin-left: 0.5rem;
+    color:black;
+  }
+  
+  #myBar {
+    width: 1%;
+    height: 30px;
+    background-color: var(--background-color);
+  }

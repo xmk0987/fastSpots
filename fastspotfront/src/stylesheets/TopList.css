@@ -1,0 +1,107 @@
+
+
+/* TOP-LIST.JS CSS */
+.top-list-container {
+    width:100%;
+    height: 100%;
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap:3rem;
+    align-items: center;
+    margin: 10rem 0;
+  }
+  
+  .top-container{
+    box-sizing: border-box;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 615px;
+    min-height: 430px;
+    background-color: var(--background-color);
+    border: var(--border);
+  }
+  
+  .top-container-header{
+    width: 100%;
+    min-height: 60px;
+    background-color: rgba(0,0,0,0.9);
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--background-color);
+    min-width: 330px;
+    border-bottom:  var(--border);
+  }
+  
+  .top-container-header h2{
+    margin-left: 1rem;
+  }
+  
+  .top-list{
+    width: 90%;
+    height:300px;
+    margin: 1rem auto;
+    font-size: 1.5rem;
+    display:block;
+    font-size: 1.5rem;
+    padding: 0.4rem 2rem;
+    max-height: 300px;
+    overflow-y: scroll;
+    background-color: black;
+    color: white;
+  }
+  
+  .top-list li{
+    margin: 1rem 1rem;
+  
+  }
+  
+  
+  
+  
+  /* ACCORDION CSS */
+  .accordion-container{
+    min-width: 100px;
+    position:relative;
+  }
+  
+  .accordion-btn {
+    background-color:black;
+    color: var(--secondary-color);
+    cursor: pointer;
+    min-width: 80px;
+    min-height: 3rem;
+    text-align: center;
+    font-size:1rem;
+    transition: 0.4s;
+    margin:0;
+    position: relative;
+  }
+  
+  
+  .panel {
+    background-color: grey;
+    border:2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    padding: 10px;
+    width: 100px;
+    position: absolute;
+    top: calc(100% + 5px); 
+    left: 50%; 
+    transform: translateX(-50%); 
+  }
+  
+  .panel p {
+    margin-right: 5px;
+    text-align: center;
+  }
+  
+  .select-amount{
+    font-size: 1.3rem;
+  }
+  

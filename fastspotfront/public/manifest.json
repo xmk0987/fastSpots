@@ -1,0 +1,8 @@
+{
+  "short_name": "FastSpots",
+  "name": "Fast Spots",
+  "start_url": "/login",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

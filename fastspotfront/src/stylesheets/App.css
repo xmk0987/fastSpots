@@ -1,0 +1,52 @@
+/* VARIABLES */
+:root{
+    --background-color: rgba(255, 0, 0, 0.975);
+    --secondary-color: white;
+    --linearGrad: linear-gradient(black, var(--background-color), black);
+    --spotifyGreen:#1DB954;
+    --spotifyBlack: #191414;
+    --linearGradGreen: linear-gradient(var(--spotifyBlack) 0%, var(--spotifyGreen) 30%, var(--spotifyGreen) 80%, var(--spotifyBlack) 100%);
+    --border : 3px solid black;
+    --grey:  rgb(43, 43, 42);
+    --leftRight: white;
+  }
+  
+  /* UNIVERSAL SETUP */
+  
+  *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  body{
+    height: 100%;
+    overflow: auto;
+    font-size: 20px;
+    background-color: var(--background-color);
+    background: linear-gradient(black, var(--background-color), black);
+    color:var(--secondary-color);
+  }
+  
+  #root{
+    height:100%;
+  }
+  
+  .app-container{
+    width:100%;
+    margin:0;
+    padding: 0;
+    display:flex;
+    flex-flow: column wrap;
+    align-items: center;
+  }
+  
+  
+
+  
