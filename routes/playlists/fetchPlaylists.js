@@ -15,7 +15,8 @@ router.get('/api/fetchPlaylists', async (req, res) => {
 
     if (response.status === 200) {
       const data = response.data;
-      res.json(data);
+      res.json(data)
+
     } else {
       console.error('Failed to fetch playlists - Spotify API returned an error.');
       res.status(response.status).json({ error: 'Failed to fetch playlists' });

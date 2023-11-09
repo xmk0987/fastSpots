@@ -22,7 +22,6 @@ router.get("/api/fetchUser", async (req, res) => {
 
         if (response.status === 200) {
             const data = response.data;
-            cachedUser = data;
             res.json(data);
         } else {
             console.error("Failed to fetch user - Spotify API returned an error.");

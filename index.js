@@ -34,8 +34,6 @@ app.use(cookieParser());
 
 const client = new Redis(process.env.REDIS_URL);
 
-// HERE IS EXTRA CODE ADDED TRYING SESSION
-
 const RedisStore = connectRedis(session);
 
 app.set("trust proxy", 1);
