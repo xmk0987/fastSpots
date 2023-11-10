@@ -11,7 +11,11 @@ router.get('/api/fetchPlaylists', async (req, res) => {
     return res.status(401).json({ error: "Invalid or expired access token" });
   }
   try {
-    const response = await fetchUserPlaylists(access_token);
+    const response = await axios.get('https://api.spotify.com/v1/me/playlists', {
+      headers: {
+        Authorization: 'Bearer ' + access_token
+      },
+    });
 
     if (response.status === 200) {
       const data = response.data;
@@ -27,13 +31,5 @@ router.get('/api/fetchPlaylists', async (req, res) => {
   }
 });
 
-// A function to fetch user playlists from Spotify
-async function fetchUserPlaylists(accessToken) {
-  return axios.get('https://api.spotify.com/v1/me/playlists', {
-    headers: {
-      Authorization: 'Bearer ' + accessToken,
-    },
-  });
-}
 
 module.exports = router;

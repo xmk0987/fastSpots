@@ -42,8 +42,9 @@ export const fetchPlaylists = async () => {
         if (playlistApiData.ok) {
             const playlistData = await playlistApiData.json();
             return playlistData;
+        }else{
+            throw new Error(`Error fetching playlists! Status: ${playlistApiData.status}`);
         }
-        throw new Error(`Error fetching playlists! Status: ${playlistApiData.status}`);
 
     } catch (error) {
         console.error("Error fetching playlists", error);
@@ -61,8 +62,9 @@ export const fetchPlaylistTracks = async (playlistId) => {
         if(playlistTrackApiData.ok){
             const playlistTrackData = await playlistTrackApiData.json();
             return playlistTrackData;       
+        }else{
+            throw new Error(`Error fetching playlist tracks! Status: ${playlistTrackApiData.status}`);
         }
-        throw new Error(`Error fetching playlist tracks! Status: ${playlistTrackApiData.status}`);
     }catch(error){
         console.error("Error fetching playlist tracks", error);
         return null;

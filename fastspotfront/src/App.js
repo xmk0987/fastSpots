@@ -15,9 +15,7 @@ import TopLists from './pages/topLists';
 import Navbar from './pages/navbar';
 import Playlist from './pages/playlists';
 
-//const BASE_FETCH_URL = "https://fastspotapi.onrender.com/api";
 const BASE_FETCH_URL = "https://fastspots.net/api"
-//const BASE_FETCH_URL = "http://localhost:8888/api";
 
 function App() {
    const navigate = useNavigate();
