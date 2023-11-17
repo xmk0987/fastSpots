@@ -32,7 +32,9 @@
 }
 
 .loginSpotifyLogo{
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+    width:140px;
+    height: 42px;
 }
 
 .login-authorize{
