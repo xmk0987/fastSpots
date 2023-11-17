@@ -180,19 +180,16 @@
   
   .optionButton:hover{
     cursor: pointer;
-    box-shadow:none;
   }
   
   .currentOptionButton{
     background-color: var(--background-color);
     color: black;
-    box-shadow: 3px 3px 3px rgba(132, 18, 18, 0.975);
   }
   
   .editorOptionButton{
     background-color: black;
     color: var(--secondary-color);
-    box-shadow: 3px 3px 3px rgb(22, 21, 21);
   }
   
   .spotifyIcon{
