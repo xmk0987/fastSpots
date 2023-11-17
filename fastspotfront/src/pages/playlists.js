@@ -594,12 +594,11 @@ return(
                 <div className="playlistOptions">
                     <button className="optionButton currentOptionButton" onClick={() => {handleCloseButton(); setShowPlaylistCreation(true);}}>CREATE NEW PLAYLIST</button>
                     <button className="optionButton currentOptionButton" onClick={() => {handleCloseButton(); setShowPlaylistOptions(true);}}>ADD CHOSEN TO PLAYLIST</button>
-                    <button className="optionButton currentOptionButton" onClick={resetChecked}>RESET CHOSEN</button>
+                    <button className="optionButton currentOptionButton" onClick={resetChecked}>RESET CHOSEN</button>                   
+                    {showPlaylistCreation && createNewPlaylist}
+                    {showPlaylistOptions && addChosenOptions}
                  </div>
             </div>
-            
-            {showPlaylistCreation && createNewPlaylist}
-            {showPlaylistOptions && addChosenOptions}
 
             <div className="editorContainer right">
                 <div className="editorHeaderContainer">
@@ -626,11 +625,9 @@ return(
                     <button className="optionButton deleteTracksButton editorOptionButton" onClick={deleteChecked}>DELETE CHOSEN</button>
                     <button className="optionButton editorOptionButton" onClick={unfollowPlaylist}>UNFOLLOW PLAYLIST</button>
                     <button className="optionButton editorOptionButton" onClick={resetChecked}>RESET CHOSEN</button>
-
+                    {showEditorPlaylist && editorPlaylists}
                 </div>
-
             </div>
-            {showEditorPlaylist && editorPlaylists}
         </div>
 
     </div>
