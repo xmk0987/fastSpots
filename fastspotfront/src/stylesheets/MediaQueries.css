@@ -14,25 +14,23 @@
         "pList cList"
         "editor editor"
     }
-
-    #choosePlaylistPopup{
-      top: 130%;
-    }
   
     .editorContainer{
       margin-top: 0;
     }
 
     .newPlaylistInfo{
-      top: 100%;
+      top: 110%;
     }
 
     .addChosenPopupContainer{
-      top: 100%;
+      top: 110%;
+
     }
 
     #choosePlaylistPopup{
-      top: 230%;
+      top: 240%;
+
     }
   }
 
@@ -83,7 +81,7 @@
 
 @media only screen and (max-width: 500px){
     .newPlaylistInfo, .addChosenPopupContainer, .login-container{
-    width: 100%;
+      width: 100%;
     }
 }
 
