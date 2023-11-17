@@ -413,7 +413,7 @@ const createListElement = (srcOrIcon, name, id, isIonIcon = false, type = "defau
     } else if (type === "choose") {
         functionToExecute = choosePlaylist; 
     } else if (type === 'unfollow'){
-        functionToExecute = unfollowPlaylist(id);
+        functionToExecute = unfollowPlaylist;
     }
     else {
         functionToExecute = handlePlaylistButtonClick;
