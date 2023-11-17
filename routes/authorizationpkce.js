@@ -22,15 +22,11 @@ router.get('/api/authorization', async (req, res) => {
         "user-read-email",
         "user-read-private",
         "user-library-read",
-        "user-follow-read",
         "user-top-read",
-        "user-read-recently-played",
         "playlist-read-private",
         "playlist-read-collaborative",
         "playlist-modify-private",
         "playlist-modify-public",
-        "user-read-playback-state",
-        "user-modify-playback-state",
         "ugc-image-upload",
       ].join(" ");
     const scopeURL = "&scope=" + encodeURIComponent(scope);
