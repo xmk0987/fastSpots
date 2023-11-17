@@ -189,6 +189,10 @@ const handleCloseButton = () => {
     setShowEditorPlaylist(false);
 }  
 
+const handleOpenSpotify = () => {
+    window.open("https://open.spotify.com/", "_blank");
+}
+
 // BUTTONS LOGIC 
 // Creates a new playlist, calls server to post it
 const handleCreateNewPlaylist = async (event) => {
@@ -594,7 +598,8 @@ return(
                 <div className="playlistOptions">
                     <button className="optionButton currentOptionButton" onClick={() => {handleCloseButton(); setShowPlaylistCreation(true);}}>CREATE NEW PLAYLIST</button>
                     <button className="optionButton currentOptionButton" onClick={() => {handleCloseButton(); setShowPlaylistOptions(true);}}>ADD CHOSEN TO PLAYLIST</button>
-                    <button className="optionButton currentOptionButton" onClick={resetChecked}>RESET CHOSEN</button>                   
+                    <button className="optionButton currentOptionButton" onClick={resetChecked}>RESET CHOSEN</button>
+                    <button className="optionButton spotifyButton" onClick={handleOpenSpotify}><img src={require('../spotifyicon.png')} className="spotifyIcon" alt="Spotify Logo"/>OPEN SPOTIFY</button>                   
                     {showPlaylistCreation && createNewPlaylist}
                     {showPlaylistOptions && addChosenOptions}
                  </div>

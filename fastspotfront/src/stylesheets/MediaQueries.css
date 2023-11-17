@@ -21,6 +21,22 @@
     
   }
 
+@media only screen and (max-width: 750px){
+  .spotifyLogo{
+    position:static;
+    width: 80px;
+    height: auto;
+  }
+
+  .nav-links{
+    margin-right: 0;
+
+  }
+
+  a{
+    font-size: 0.7rem;
+  }
+}
   
   
 @media only screen and (max-width: 615px){

@@ -25,6 +25,7 @@ const Navbar = (props) => {
     return (
         <header>
             <nav className="navbar">
+                <img src={require('../spotifylogo.png')} alt="Spotify Logo" className='spotifyLogo'/>
                 <div className="nav-links">
                     <ul>
                         <li><Link to='/top-lists'>TOP LISTS</Link></li>

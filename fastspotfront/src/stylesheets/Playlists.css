@@ -7,7 +7,7 @@
     width: 100%;
     height: 100vh;
     min-height: 600px;
-    padding-top: 50px;
+    padding-top: 70px;
     background-color: black;
   }
   
@@ -195,7 +195,18 @@
     box-shadow: 3px 3px 3px rgb(22, 21, 21);
   }
   
+  .spotifyIcon{
+    width: 21px;
+    height: 21px;
+    margin-right: 0.3rem;
+  }
   
+  .spotifyButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
   
   /* NEW PLAYLIST CREATION */
   .newPlaylistInfo, .addChosenPopupContainer{

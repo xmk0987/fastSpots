@@ -31,6 +31,10 @@
     color: #1DB954;
 }
 
+.loginSpotifyLogo{
+    margin-bottom: 3rem;
+}
+
 .login-authorize{
     text-align: center;
     margin: 2rem auto 0 auto;
