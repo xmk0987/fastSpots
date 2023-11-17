@@ -29,7 +29,7 @@ const Playlist = (props) => {
     const [showPlaylistCreation, setShowPlaylistCreation] = useState(false);
     const [showPlaylistOptions, setShowPlaylistOptions] = useState(false);
     const [showEditorPlaylist, setShowEditorPlaylist] = useState(false);
-
+    const [showUnfollowPlaylist, setShowUnfollowPlaylist] = useState(false);
     const currentListRef = useRef(null);
     const baseURL = props.baseURL;
 
@@ -187,6 +187,7 @@ const handleCloseButton = () => {
     setShowPlaylistCreation(false);
     setShowPlaylistOptions(false);
     setShowEditorPlaylist(false);
+    setShowUnfollowPlaylist(false);
 }  
 
 const handleOpenSpotify = () => {
@@ -349,33 +350,31 @@ const choosePlaylist = async (id) => {
 }
 
 // Unfollow the current playlist in editor and update the editor and playlist lists
-const unfollowPlaylist = async () => {
-    if(!editorPlaylistId){
-        alert("Can't unfollow nothing");
-    } else{
-        try{
-            const url = `api/unfollowPlaylist/${editorPlaylistId}`;
-            const response = await fetch(url, {
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/json', 
-                },
-                credentials: 'include',
-            });
-            if(response.ok){
+const unfollowPlaylist = async (id) => {
+    handleCloseButton();
+    try{
+        const url = `api/unfollowPlaylist/${id}`;
+        const response = await fetch(url, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json', 
+            },
+            credentials: 'include',
+        });
+        if(response.ok){
+            if(id === editorPlaylistId){
                 setEditorPlaylistTracks(null);
                 setEditorPlaylistId(null);
                 setEditorTitle("Playlist Editor");
-                scrollToTop();
-                const newPlaylists = await fetchPlaylists(baseURL);
-                setPlaylists(newPlaylists);
             }
-        } catch(error){
-            console.error("Failed to unfollow");
-            return null;
+            scrollToTop();
+            const newPlaylists = await fetchPlaylists(baseURL);
+            setPlaylists(newPlaylists);
         }
+    } catch(error){
+        console.error("Failed to unfollow");
+        return null;
     }
-
 }
 
 
@@ -413,7 +412,10 @@ const createListElement = (srcOrIcon, name, id, isIonIcon = false, type = "defau
         functionToExecute = addChosen; 
     } else if (type === "choose") {
         functionToExecute = choosePlaylist; 
-    } else {
+    } else if (type === 'unfollow'){
+        functionToExecute = unfollowPlaylist(id);
+    }
+    else {
         functionToExecute = handlePlaylistButtonClick;
     }
 
@@ -505,6 +507,20 @@ const editorPlaylists = (
     </div>
 ); 
 
+// Add chosen html, popups with add chosen button
+const chooseUnfollowPlaylist = (
+    <div className="addChosenPopupContainer">
+        <h2>Unfollow a playlist</h2>
+        <button className="closeButton" onClick={handleCloseButton}>X</button>
+        <ul className="addChosenList">
+            {playlists && playlists.items.map((playlist) => {
+                const imageUrl = playlist.images && playlist.images[0] ? playlist.images[0].url : null;
+                return createListElement(imageUrl || <BsFillLightningFill/>, playlist.name, playlist.id, !imageUrl, "unfollow"); 
+            })}
+        </ul>
+    </div>
+); 
+
 // Creating currentList
 const currentList = (
     <ul>
@@ -554,7 +570,7 @@ const editorGuide = (
             <h5>Buttons:</h5>
             <p><span className="bold">OPEN PLAYLIST / CHANGE PLAYLIST</span> - open/change the playlist in editor</p>
             <p><span className="bold">DELETE CHOSEN</span> - delete all the selected songs from the current playlist in editor.</p>
-            <p><span className="bold">UNFOLLOW</span> - unfollow the current playlist in the editor</p>
+            <p><span className="bold">UNFOLLOW</span> - unfollow a playlist of your choice</p>
         </div>
        
     </div>
@@ -628,9 +644,10 @@ return(
                 <div className="editorButtonsContainer ">
                     <button className="openEditorButton optionButton editorOptionButton" onClick={() => {handleCloseButton(); setShowEditorPlaylist(true);}}>{!editorPlaylistTracks ? 'OPEN PLAYLIST' : 'CHANGE PLAYLIST'}</button>
                     <button className="optionButton deleteTracksButton editorOptionButton" onClick={deleteChecked}>DELETE CHOSEN</button>
-                    <button className="optionButton editorOptionButton" onClick={unfollowPlaylist}>UNFOLLOW PLAYLIST</button>
+                    <button className="optionButton editorOptionButton" onClick={() => {handleCloseButton(); setShowUnfollowPlaylist(true);}}>UNFOLLOW PLAYLIST</button>
                     <button className="optionButton editorOptionButton" onClick={resetChecked}>RESET CHOSEN</button>
                     {showEditorPlaylist && editorPlaylists}
+                    {showUnfollowPlaylist && chooseUnfollowPlaylist}
                 </div>
             </div>
         </div>
