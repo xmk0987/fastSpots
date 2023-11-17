@@ -1,7 +1,5 @@
 /* LOGIN.JS CSS */
 .login-container{
-    margin-top: 180px;
-    height: 50%;
     min-width: 500px;
     min-height: 400px;
     display:flex;

@@ -489,7 +489,7 @@ const addChosenOptions = (
 
 // Open another playlist to view html, popups with add chosen button
 const editorPlaylists = (
-    <div className="addChosenPopupContainer">
+    <div className="addChosenPopupContainer" id="choosePlaylistPopup">
         <h2>Choose playlist to view</h2>
         <button className="closeButton" onClick={handleCloseButton}>X</button>
         <ul className="addChosenList">
@@ -625,6 +625,8 @@ return(
                     <button className="openEditorButton optionButton editorOptionButton" onClick={() => {handleCloseButton(); setShowEditorPlaylist(true);}}>{!editorPlaylistTracks ? 'OPEN PLAYLIST' : 'CHANGE PLAYLIST'}</button>
                     <button className="optionButton deleteTracksButton editorOptionButton" onClick={deleteChecked}>DELETE CHOSEN</button>
                     <button className="optionButton editorOptionButton" onClick={unfollowPlaylist}>UNFOLLOW PLAYLIST</button>
+                    <button className="optionButton editorOptionButton" onClick={resetChecked}>RESET CHOSEN</button>
+
                 </div>
 
             </div>
