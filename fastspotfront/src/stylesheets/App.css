@@ -17,6 +17,7 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Play";
   }
   
   html{
@@ -28,7 +29,7 @@
   body{
     height: 100%;
     overflow: auto;
-    font-size: 20px;
+    font-size: 22px;
     background-color: var(--background-color);
     background: linear-gradient(black, var(--background-color), black);
     color:var(--secondary-color);

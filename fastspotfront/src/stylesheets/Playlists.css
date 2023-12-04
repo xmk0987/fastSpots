@@ -119,7 +119,7 @@
   
   .searchBar{
     width: 100%;
-    height: 30px;
+    height: 34px;
     position: sticky;
     top:50px;
   }
@@ -145,6 +145,8 @@
   
   .currentSearch{
     color: white;
+    background-color: var(--grey);
+
     
   }
   
@@ -152,11 +154,6 @@
     color:black;
   }
   
-  
-  
-  .currentSearch{
-    background-color: var(--grey);
-  }
   
   
   
