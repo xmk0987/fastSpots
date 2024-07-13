@@ -1,27 +1,26 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from "react-router-dom";
 import React, { useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
-import './stylesheets/App.css';
-import './stylesheets/Navbar.css';
-import './stylesheets/Login.css';
-import './stylesheets/TopList.css';
-import './stylesheets/Playlists.css'
-import './stylesheets/MediaQueries.css';
+import "./stylesheets/App.css";
+import "./stylesheets/Navbar.css";
+import "./stylesheets/Login.css";
+import "./stylesheets/TopList.css";
+import "./stylesheets/Playlists.css";
+import "./stylesheets/MediaQueries.css";
 
+import Login from "./pages/login";
+import TopLists from "./pages/topLists";
+import Navbar from "./pages/navbar";
+import Playlist from "./pages/playlists";
 
-import Login from './pages/login';
-import TopLists from './pages/topLists';
-import Navbar from './pages/navbar';
-import Playlist from './pages/playlists';
-
-const BASE_FETCH_URL = "https://fastspots.net/api"
+const BASE_FETCH_URL = "https://fastspots.net/api";
 //const BASE_FETCH_URL = "http://localhost:8888"
 function App() {
-   const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    // CHECKING IF ACCESS TOKEN IS PRESENT AND REDIRECTING ACCORDING
-    useEffect(() => {
+  // CHECKING IF ACCESS TOKEN IS PRESENT AND REDIRECTING ACCORDING
+  /*     useEffect(() => {
       const checkAccessToken = async () => {
          try {
            const response = await fetch(`api/check-access-token`, {
@@ -42,20 +41,19 @@ function App() {
      
        checkAccessToken(); 
     
-    }, [navigate]);
+    }, [navigate]); */
 
-
-    return (
-      <div className='app-container'>
-        {window.location.pathname !== '/login' && <Navbar baseURL={BASE_FETCH_URL}/>}
+  return (
+    <div className="app-container">
+      <p>Site closed. Under maintenance.</p>
+      {/*         {window.location.pathname !== '/login' && <Navbar baseURL={BASE_FETCH_URL}/>}
         <Routes>
            <Route path="/login" element={<Login baseURL={BASE_FETCH_URL}/>} />
            <Route path="/top-lists" element={<TopLists baseURL={BASE_FETCH_URL}/>} />
            <Route path='/playlist' element={<Playlist baseURL={BASE_FETCH_URL} />} />
-        </Routes> 
-      </div>
-    );
+        </Routes>  */}
+    </div>
+  );
 }
 
 export default App;
-    
